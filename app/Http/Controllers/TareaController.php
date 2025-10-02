@@ -49,7 +49,7 @@ class TareaController extends Controller
      */
     public function edit(Tarea $tarea)
     {
-        //
+        return view('tareas.edit-tarea', compact('tarea'));
     }
 
     /**
@@ -57,7 +57,10 @@ class TareaController extends Controller
      */
     public function update(Request $request, Tarea $tarea)
     {
-        //
+        $tarea->titulo = $request->titulo;
+        $tarea->descripcion = $request->descripcion;
+        $tarea->save();
+        return redirect()->route('tarea.show', $tarea->id);
     }
 
     /**
