@@ -32,6 +32,11 @@
                     </td>
                     <td>
                         <a href="{{ route('tarea.edit', $tarea->id) }}">Editar</a>
+                        <form action="{{ route('tarea.destroy', $tarea->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
