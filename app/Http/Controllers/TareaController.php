@@ -21,7 +21,7 @@ class TareaController extends Controller
      */
     public function create()
     {
-        //
+        return view('tareas.create-tarea');
     }
 
     /**
@@ -29,7 +29,11 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tarea = new Tarea();
+        $tarea->titulo = $request->titulo;
+        $tarea->descripcion = $request->descripcion;
+        $tarea->save();
+        return redirect()->route('tarea.index');
     }
 
     /**
