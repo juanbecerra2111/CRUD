@@ -29,6 +29,15 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'titulo' => 'required|max:20',
+            'descripcion' => [
+                'required',
+                'min:10',
+                'max:200'
+            ],
+        ]);
+
         $tarea = new Tarea();
         $tarea->titulo = $request->titulo;
         $tarea->descripcion = $request->descripcion;
