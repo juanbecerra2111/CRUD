@@ -9,15 +9,7 @@
 <body>
     <h1>Creación de nueva tarea</h1>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    @include('form-error')
 
     <form action="{{ route('tarea.store') }}" method="POST">
         @csrf
