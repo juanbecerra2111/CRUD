@@ -9,6 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/bienvenida', function () {
+    return view('bienvenida');
+})->name('bienvenida');
+
 Route::resource('tarea', TareaController::class);
 
 Route::view('dashboard', 'dashboard')
