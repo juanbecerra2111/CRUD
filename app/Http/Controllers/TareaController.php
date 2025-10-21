@@ -22,6 +22,7 @@ class TareaController extends Controller implements HasMiddleware
     public function index()
     {
         $tareas = Tarea::all();
+        //$tareas = Tarea::withTrashed()->get(); // Obtiene tareas incluyendo las eliminadas
         return view('tareas.index-tareas', compact('tareas'));
     }
 
