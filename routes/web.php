@@ -13,7 +13,7 @@ Route::get('/bienvenida', function () {
     return view('bienvenida');
 })->name('bienvenida');
 
-Route::resource('tarea', TareaController::class)->middleware('auth');
+Route::resource('tarea', TareaController::class);//->middleware('auth');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
