@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -39,3 +40,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+use App\Http\Controllers\AlumnoController;
+
+Route::resource('alumnos', AlumnoController::class);
+
+
